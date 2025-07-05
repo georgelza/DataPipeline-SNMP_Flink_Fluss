@@ -1,4 +1,4 @@
-# A new concept in real time Data Center Monitoring using Datastreaming concepts
+# A Proposal to uitlize Modern Realtime Datastreaming Technologies to Manage Data centre's resources.
 
 All via Apache Flink + SNMP Source Connector with real time analytical data storage provided via Apache Fluss.
 
@@ -39,7 +39,7 @@ Eventually I got the [Apache Flink SNMP Source Cnnector](https://github.com/geor
 Learned allot and can't say I'm not mildly impressed with what I created.
 
 
-[GIT REPO]()
+[GIT REPO](https://github.com/georgelza/DataPipeline-SNMP_Flink_Fluss.git)
 
 ### Building the project
 
