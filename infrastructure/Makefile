@@ -17,7 +17,7 @@ help:
 	@echo "$$HELP"
 .PHONY: help
 
-pullall:  os mqtt flink fluss db prometheus grafana misc 
+pullall:  os flink fluss db misc 
 
 pullsource: common hive  
 
@@ -28,9 +28,7 @@ buildall: buildos buildopenjdk11 buildhdfs buildopenjdk8 buildhive buildflinkbas
 # arm64/v8 used as base for all images except the app/*.
 os: 
 	docker pull arm64v8/ubuntu:24.04
-	
-mqtt:
-	docker pull eclipse-mosquitto:2.0.21
+
 	
 flink:
 	docker pull flink:1.20.1-scala_2.12-java17
@@ -41,12 +39,6 @@ fluss:
 
 db:
 	docker pull postgres:12	
-
-prometheus:
-	docker pull prom/prometheus:v3.3.0
-
-grafana:
-	docker pull grafana/grafana:11.6.1
 
 misc:
 	docker pull python:3.13-bookworm

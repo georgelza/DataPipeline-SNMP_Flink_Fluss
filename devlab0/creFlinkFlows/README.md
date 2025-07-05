@@ -15,20 +15,20 @@
   
 2. 2.1.snmp_poll_data_get.sql
 
-  ...
+  Various SNMP GET fetches.
 
 3. 2.1.snmp_poll_data_walk.sql
 
-  ...
+  Various SNMP WALK data fetches.
 
 4. 2.1.snmp_poll_data_auth.sql
 
-  ...
+  SNMP GET and WALK data fetches, but with SNMPv3 authentification.
 
 5. 3.1.creFlussTarget.sql
 
-  ...
+  Create Apache Fluss Target tables.
 
 6. 3.2.creFlussInserts.sql
 
-  ...
+  Insert into our Apache Fluss target tables from our Hive source tables.

@@ -20,4 +20,4 @@ CREATE OR REPLACE TABLE fluss.snmp.snmp_poll_data (
 -- See: https://alibaba.github.io/fluss-docs/docs/table-design/data-distribution/partitioning/#partition-generation-rules
 -- For the setup around Auto Partitioning.
 
-SHOW PARTITIONS fluss.fluss.snmp_poll_data;
+SHOW PARTITIONS fluss.snmp.snmp_poll_data;
