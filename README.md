@@ -4,17 +4,17 @@ All via Apache Flink + SNMP Source Connector with real time analytical data stor
 
 ## Overview
 
-How can we re-vitalize a industry standard technology like SNMP (Simple Network Management Protocol), using modern data streaming concepts to improve monitoring, managment, proactive maintenance to protect our ever increasing reliance in larger and larger data center due to technologies like AI, ML, RAG, etc... there are many more new 3 letter acroyms if you go looking.
+How can we re-vitalize a industry standard technology like SNMP (Simple Network Management Protocol), using modern data streaming concepts to improve monitoring, managment, proactive maintenance to protect our ever increasing reliance in larger and larger data center due to technologies like AI, ML, RAG, etc... there are many more new 3 letter acronyms if you go looking.
 
-If anyone have ever looked at SNMP they would have notice the sheer volume of information available, exposed. It also maps very well to the root concepts coined during the early days BIG Data, namely VVV (Velocity, Volume, Variety).
+If anyone has ever looked at SNMP, they would have notice the sheer volume of information available, exposed. It also maps very well to the root concepts coined during the early days BIG Data, namely VVV (Velocity, Volume, Variety).
 
 With this we do sit with the problem that VVV also causes, how do we manage it, how do we consume the data volume, store the volume, expose abnormalities.
 
 To analyse it, well we have all the 3LA (Three Letter Acronyms) as previously, AI, ML, RAG, MCP... But none of these are of any value if we don't have data to work with.
 
-SNMP itself is a old technology, but it was never build for the modern world, for the new volumes we are talking here about, and it has no "cencept" of our very popular 3LA demanding/getting all the attention.
+SNMP itself is a old technology, but it was never build for the modern world, for the new volumes we are talking here about, and it has no "concept" of our very popular 3LA demanding/getting all the attention.
 
-And here we sit, lets introduce modern Datastreaming technologies... Lets use these concepts to source our data and get it to our 3LA project of choice.
+And here we sit, lets introduce modern Data streaming technologies... Let's use these concepts to source our data and get it to our 3LA project of choice.
 
 
 This is the combination 1, 2 no more like 3 projects.
@@ -23,16 +23,16 @@ This is the combination 1, 2 no more like 3 projects.
 
 2. Write an apache Flink SNMP source connector, and then project 3, 
 
-3. The ability to load SNMP MIB files into an designated table to be accesible via our apache Flink/Apache Fluss stack. This will be done using [Mibble](https://github.com/cederberg/mibble) library
+3. The ability to load SNMP MIB files into a designated table to be accessible via our apache Flink/Apache Fluss stack. This will be done using [Mibble](https://github.com/cederberg/mibble) library
 
 
-Well, project 1 is done (You rading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it.
+Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it.
 
 First up, I am not a developer, I'm a technologist (day job is Technology Architect, but for 25+ yrs I've primarily specialized in the data space) with a curious mind that get me into allot of trouble... 
 
-Java is not my language, make that never have been, I'm miildly proficient in Python and Golang, never written Java until I started looking at **Apache Flink** source connectors...
+Java is not my language, make that never have been, I'm mildly proficient in Python and Golang, never written Java until I started looking at **Apache Flink** source connectors...
 
-As such, I had the idea, and between *Google Gemini* and myself we had allot of conversionations, arguments, restarts. Giving it the right comments, questions you can make it eventually provide you with the correct structured framework. At wich point I added the bits I figured I needed.
+As such, I had the idea, and between *Google Gemini* and myself we had allot of conversations, arguments, restarts. Giving it the right comments, questions you can make it eventually provide you with the correct structured framework. At which point I added the bits I figured I needed.
 
 Eventually I got the [Apache Flink SNMP Source Cnnector](https://github.com/georgelza/SNMP-Flink-Source-connector.git) completed. 
 
