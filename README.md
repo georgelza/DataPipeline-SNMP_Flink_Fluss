@@ -17,7 +17,7 @@ SNMP itself is a old technology, but it was never build for the modern world, fo
 And here we sit, lets introduce modern Data streaming technologies... Let's use these concepts to source our data and get it to our 3LA project of choice.
 
 
-This is the combination 1, 2 no more like 3 projects.
+This is the combination of 1, 2 no more like 3 projects.
 
 1. The first was this idea, this blog, but it then required project 2, 
 
