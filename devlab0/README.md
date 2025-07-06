@@ -53,6 +53,9 @@ Take note that the flink images are build with `hive-site.xml`.
 
 The credentials are sourced from the `.env` file and the start parameters out of `conf/postgresql.conf` & `conf/pg_hba.conf`.
 
+NOTE: We're create 2 PostgreSQL servers, 
+1.  postgresql      => used as the HMS
+2.  postgresqlsnmp  => used as the snmp data store for the oid_metada and device_info tables.
 
 ## Run the stack
 

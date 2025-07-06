@@ -23,10 +23,10 @@ This is the combination 1, 2 no more like 3 projects.
 
 2. Write an apache Flink SNMP source connector, and then project 3, 
 
-3. The ability to load SNMP MIB files into a designated table to be accessible via our apache Flink/Apache Fluss stack. This will be done using [Mibble](https://github.com/cederberg/mibble) library
+3. The ability to load SNMP MIB files into a designated table to be accessible via our apache Flink/Apache Fluss stack. 
 
 
-Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it.
+Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it, at this stage it's still a piece of work in progress.
 
 First up, I am not a developer, I'm a technologist (day job is Technology Architect, but for 25+ yrs I've primarily specialized in the data space) with a curious mind that get me into allot of trouble... 
 

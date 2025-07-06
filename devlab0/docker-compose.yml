@@ -238,19 +238,25 @@ services:
   # Datastore for Hive Metastore 
   postgres:
     image: ${REPO_NAME}/postgres-12.0:1.0.0
-    hostname: postgres
-    container_name: postgres
+    hostname: ${DATABASE_HOST}
+    container_name: ${DATABASE_HOST}
     restart: unless-stopped
     ports:
       - ${DATABASE_PORT}:5432
     environment:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
       - POSTGRES_DB=${DATABASE_DB}
+
     healthcheck:
       test: ["CMD", "psql", "-U", "${DATABASE_USER}", "${DATABASE_DB}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ./data/postgres_hms:/var/lib/postgresql/data
     configs:
       - source: postgres_conf
         target: /etc/postgresql/postgresql.conf
@@ -314,6 +320,37 @@ services:
       - metastore
     command: hiveserver
 
+
+  # Datastore for snmp 
+  postgressnmp:
+    image: ${REPO_NAME}/postgres-12.0:1.0.0
+    hostname: ${PGSQLSNMP_HOST}
+    container_name: ${PGSQLSNMP_HOST}
+    restart: unless-stopped
+    ports:
+      - ${PGSQLSNMP_PORT}:5432
+    environment:
+      - POSTGRES_USER=${PGSQLSNMP_USER}
+      - POSTGRES_PASSWORD=${PGSQLSNMP_PASSWORD}
+      - POSTGRES_ROOT_PASSWORD= ${PGSQLSNMP_ROOT_PASSWORD}
+      - POSTGRES_DB=${PGSQLSNMP_DB}
+
+    healthcheck:
+      test: ["CMD", "psql", "-U", "${PGSQLSNMP_USER}", "${PGSQLSNMP_DB}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+    volumes:
+      - ./data/postgres_snmp:/var/lib/postgresql/data
+      - ./conf/snmp.sql:/docker-entrypoint-initdb.d/init.sql
+
+    configs:
+      - source: postgres_conf
+        target: /etc/postgresql/postgresql.conf
+      - source: postgres_hba
+        target: /etc/postgresql/data/pg_hba.conf
+    command: -c config_file=/etc/postgresql/postgresql.conf
 
 
 # Without a network explicitly defined, you hit this Hive/Thrift error

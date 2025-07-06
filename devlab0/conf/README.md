@@ -19,6 +19,8 @@ Various confguratin files either push/mounted to a target file inside containers
 
 8. pg_hba.conf              -   PostgreSql secrutity configuration.
 
-9.  postgresql.conf          -   PostgreSql configuration file.
+9.  postgresql.conf         -   PostgreSql configuration file.
+
+10. snmp.sql                -   this script is mounted as the init.sql & executed at start up to create the contained tables.
 
 
