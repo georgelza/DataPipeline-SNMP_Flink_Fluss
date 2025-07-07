@@ -44,7 +44,7 @@ run:
 		postgres metastore hiveserver2 \
 		jobmanager taskmanager \
 		zookeeper coordinator-server tablet-server-0 tablet-server-1 tablet-server-2 \
-		postgressnmp \
+		postgressnmp redissnmp mysqlsnmp \
 		 --remove-orphans 
 
 #		namenode resourcemanager historyserver nodemanager1 datanode1 datanode2 datanode3 datanode4 datanode5 \
@@ -88,6 +88,8 @@ down:
 	cd data/; rm -rf paimon
 	cd data/; rm -rf postgres_hms
 	cd data/; rm -rf postgres_snmp
+	cd data/; rm -rf redis_snmp
+	cd data/; rm -rf mysql_snmp
 
 ps:
 	docker compose ps

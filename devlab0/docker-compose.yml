@@ -353,6 +353,31 @@ services:
     command: -c config_file=/etc/postgresql/postgresql.conf
 
 
+  redissnmp: 
+    image: redis:8.0-bookworm
+    hostname: ${REDISSNMP_HOST}
+    container_name: ${REDISSNMP_HOST}
+    restart: unless-stopped
+    ports:
+      - ${REDISSNMP_PORT}:6379
+    volumes:  
+      - ./data/redis_snmp:/data
+
+  mysqlsnmp: 
+    image: mysql:8.4	
+    hostname: ${MYSQLSNMP_HOST}
+    container_name: ${MYSQLSNMP_HOST}
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: ${MYSQLSNMP_USER} 
+      MYSQL_PASSWORD: ${MYSQLSNMP_PASSWORD} 
+      MYSQL_ROOT_PASSWORD: ${MYSQLSNMP_USER}
+      MYSQL_DATABASE: ${MYSQLSNMP_DB} 
+    ports:
+      - ${MYSQLSNMP_PORT}:3306
+    volumes:
+      - ./data/mysql_snmp:/var/lib/mysql
+
 # Without a network explicitly defined, you hit this Hive/Thrift error
 # java.net.URISyntaxException Illegal character in hostname
 # https://github.com/TrivadisPF/platys-modern-data-platform/issues/231

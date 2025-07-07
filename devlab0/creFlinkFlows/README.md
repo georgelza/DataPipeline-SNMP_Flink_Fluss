@@ -32,3 +32,11 @@
 6. 3.2.creFlussInserts.sql
 
   Insert into our Apache Fluss target tables from our Hive source tables.
+
+7. 4.x.snmp_device_info_*
+
+  ...
+
+8. 5.1.snmp_oid_metadata_*
+
+  ....
