@@ -26,7 +26,7 @@ This is the combination of 1, 2 no more like 3 projects.
 3. The ability to load SNMP MIB files into a designated table to be accessible via our apache Flink/Apache Fluss stack. 
 
 
-Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it, at this stage it's still a piece of work in progress.
+Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it, at this stage it's still a piece of work in progress, it's an "addition" to the core project... so going to use that as excuse why it's not done yet.
 
 First up, I am not a developer by trade, more like by a side hppby, as far as my day job is concerned, I'm a technologist, a  Technology Architect, but for 25+ yrs I've primarily specialized in the data space, with a curious mind that get me into allot of trouble... 
 
@@ -40,6 +40,7 @@ Learned allot and can't say I'm not mildly impressed with what I created.
 
 
 [GIT REPO](https://github.com/georgelza/DataPipeline-SNMP_Flink_Fluss.git)
+
 
 ### Building the project
 

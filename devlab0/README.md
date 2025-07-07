@@ -80,3 +80,10 @@ NOTE: We're create 2 PostgreSQL servers,
    3. `make inserts`    -> This will start the various inserts of data from our source table objects, into the `fluss.snmp.*` tables.
     
 7.  `make lakehouse` -> This will start our lakehouse persisting job, which will move our `fluss.snmp` tables to the **Apache Paimon** based table located on our **HDFS** stack.
+
+
+## External Tables
+
+NOTE: remember to lin with external tables via JDBC or with a external store like REDIS you do need to add the required jar file to the devlab0/conf/flink/lib/flink which is then mounted onto the Jobmanager and Taskmanager's lib directory.
+
+This becomes especially relevant if you want to access data pushed into snmp_device_info or snmp_oid_metadata tables.
