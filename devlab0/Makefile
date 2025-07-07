@@ -63,8 +63,20 @@ source:
 targets:
 	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.1.creFlussTargets.sql
 
+targetsx:
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_mysql.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_pg.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_redis.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_mysql.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_pg.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_redis.sql
+
 inserts:
 	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.2.creFlussInserts.sql
+
+insertsx:
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/6.2.creFlussInserts.sql
+
 
 lakehouse:
 	docker compose exec jobmanager \

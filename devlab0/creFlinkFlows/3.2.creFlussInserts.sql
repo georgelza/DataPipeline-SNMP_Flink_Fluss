@@ -1,11 +1,7 @@
-
-
 SET 'parallelism.default'    = '2';
 SET 'sql-client.verbose'     = 'true';
 SET 'execution.runtime-mode' = 'streaming';
 
-
---- Push Data to Prometheus ---
 
 SET 'pipeline.name' = 'Push SNMP snmp_poll_data1 => fluss.snmp_poll_data';
 

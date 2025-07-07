@@ -1,4 +1,3 @@
--- Fluss table with flattened data from North, South and East tables.
 CREATE OR REPLACE TABLE fluss.snmp.snmp_poll_data (
      device_id               VARCHAR(255) NOT NULL              -- Foreign key referencing snmp_device_info.device_id
     ,metric_oid              VARCHAR(255) NOT NULL              -- Object Identifier (OID) of the polled metric
