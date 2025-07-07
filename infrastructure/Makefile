@@ -39,8 +39,8 @@ fluss:
 
 db:
 	docker pull postgres:12	
-	docker pull redis:	
 	docker pull mysql:8.4	
+	docker pull redis:8.0-bookworm
 
 misc:
 	docker pull python:3.13-bookworm
