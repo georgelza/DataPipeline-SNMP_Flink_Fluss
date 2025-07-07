@@ -49,33 +49,28 @@ run:
 
 #		namenode resourcemanager historyserver nodemanager1 datanode1 datanode2 datanode3 datanode4 datanode5 \
  
-deploy:  createcat source  
+deploy:  createcat source targets 
 # targets inserts
  
 createcat:
 	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/1.0.creCat.sql
 
 source:
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.snmp_poll_data_get.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.snmp_poll_data_walk.sql
-#	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.snmp_poll_data_auth.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.creSnmp_poll_data_get.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.creSnmp_poll_data_walk.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.1.creSnmp_poll_data_auth.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.2.creSnmp_device_info.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/2.3.creSnmp_oid_metedata.sql
 
 targets:
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.1.creFlussTargets.sql
-
-targetsx:
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_mysql.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_pg.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.snmp_device_info_redis.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_mysql.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_pg.sql
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/5.1.snmp_oid_metadata_redis.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.1.creSnmp_poll_data_FlussTargets.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.2.creSnmp_device_info_FlussTargets.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.3.creSnmp_oid_metadata_FlussTargets.sql
 
 inserts:
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/3.2.creFlussInserts.sql
-
-insertsx:
-	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/6.2.creFlussInserts.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.1.creSnmp_poll_data_FlussInserts.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.2.creSnmp_device_info_FlussInserts.sql
+	docker compose exec jobmanager /opt/flink/bin/sql-client.sh -f /sql/4.3.creSnmp_oid_metadata_FlussInserts.sql
 
 
 lakehouse:
