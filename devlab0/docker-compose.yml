@@ -167,7 +167,6 @@ services:
       - ./data/flink/checkpoints:/opt/flink/checkpoints
       - ./data/flink/rocksdb:/opt/flink/rocksdb
       - ./data/flink/jm/tmp:/tmp
-      - ./conf/mibs:/mibs
 
       - ./conf/flink/lib/hive:/opt/flink/lib/hive
       - ./conf/flink/lib/fluss:/opt/flink/lib/fluss
@@ -211,7 +210,6 @@ services:
       - ./data/flink/checkpoints:/opt/flink/checkpoints
       - ./data/flink/rocksdb:/opt/flink/rocksdb
       - ./data/flink/tm/tmp:/tmp
-      - ./conf/mibs:/mibs
 
       - ./conf/flink/lib/hive:/opt/flink/lib/hive
       - ./conf/flink/lib/fluss:/opt/flink/lib/fluss
@@ -352,16 +350,6 @@ services:
         target: /etc/postgresql/data/pg_hba.conf
     command: -c config_file=/etc/postgresql/postgresql.conf
 
-
-  redissnmp: 
-    image: redis:8.0-bookworm
-    hostname: ${REDISSNMP_HOST}
-    container_name: ${REDISSNMP_HOST}
-    restart: unless-stopped
-    ports:
-      - ${REDISSNMP_PORT}:6379
-    volumes:  
-      - ./data/redis_snmp:/data
 
   mysqlsnmp: 
     image: mysql:8.4	

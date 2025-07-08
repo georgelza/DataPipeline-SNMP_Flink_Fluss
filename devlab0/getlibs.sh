@@ -30,8 +30,8 @@ mkdir -p $curhome/conf/flink/lib
 cd $curhome/conf/flink/lib/flink
 wget https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-json/1.20.1/flink-sql-json-1.20.1.jar
 wget https://jdbc.postgresql.org/download/postgresql-42.7.4.jar
-wget https://repo1.maven.org/maven2/com/redis/redis-flink-connector/0.0.10/redis-flink-connector-0.0.10.jar
-wget https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar
+#wget https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar
+#wget https://repo1.maven.org/maven2/org/apache/bahir/flink-connector-redis_2.11/1.0/flink-connector-redis_2.11-1.0.jar
 wget https://repo1.maven.org/maven2/org/apache/flink/flink-connector-jdbc/3.3.0-1.20/flink-connector-jdbc-3.3.0-1.20.jar
 
 
