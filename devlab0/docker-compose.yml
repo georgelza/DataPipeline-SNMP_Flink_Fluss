@@ -377,6 +377,32 @@ services:
       - ./conf/mysql_snmp.sql:/data/application/init.sql
     command: --init-file /data/application/init.sql
 
+  redissnmp: 
+    image: redis:8.0-bookworm
+    hostname: ${REDISSNMP_HOST}
+    container_name: ${REDISSNMP_HOST}
+    restart: unless-stopped
+    ports:
+      - ${REDISSNMP_PORT}:6379
+
+    healthcheck: 
+      test: ["CMD", "redis-cli", "-h", "localhost", "-p", "6379", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 10s # Give the entrypoint script time to run and Redis to start
+
+    environment:
+      - REDIS_COMMANDS_FILE_PATH=/app/redis_commands.txt
+      - REDIS_DB=${REDISSNMP_DB}
+      # - REDIS_PASSWORD=${REDISSNMP_PASSWORD}      
+    volumes:  
+      - ./data/redis_snmp:/data
+      - ./conf/redis_commands.txt:/app/redis_commands.txt
+      - ./conf/redisentrypoint.sh:/usr/local/bin/entrypoint.sh
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
+    command: redis-server
+    
 # Without a network explicitly defined, you hit this Hive/Thrift error
 # java.net.URISyntaxException Illegal character in hostname
 # https://github.com/TrivadisPF/platys-modern-data-platform/issues/231
