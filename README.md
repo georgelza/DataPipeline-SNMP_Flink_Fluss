@@ -24,6 +24,7 @@ This is the combination of 1, 2 no more like 3 projects.
 2. Write an apache Flink SNMP source connector, and then project 3, 
 
 3. The ability to load SNMP MIB files into a designated table to be accessible via our apache Flink/Apache Fluss stack. 
+    See [SNMP-MIB-Parser](https://github.com/georgelza/SNMP-MIB-Parser)
 
 
 Well, project 1 is done (You reading it, hehehe), project 2 is 90% done (SNMPv3 auth outstanding), project 3... lets not talk, or well, maybe by the time you read this I might have completed it, at this stage it's still a piece of work in progress, it's an "addition" to the core project... so going to use that as excuse why it's not done yet.
