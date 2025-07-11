@@ -1,12 +1,12 @@
 
 -- create snmp_oid_metadata table
 CREATE TABLE IF NOT EXISTS public.snmp_oid_metadata (
-     oid_string          VARCHAR(255) PRIMARY KEY                   -- The numerical OID (e.g., ".1.3.6.1.2.1.1.1.0")
-    ,oid_name            VARCHAR(255)                               -- The human-readable name (e.g., "sysDescr")
-    ,oid_description     VARCHAR(2000)                              -- The textual description from the MIB
-    ,syntax_type         VARCHAR(255)                               -- The data type (e.g., "DisplayString", "Integer32")
-    ,unit                VARCHAR(50)                                -- Optional: units (e.g., "seconds", "bytes")
-    ,oid_type            VARCHAR(50)                                -- Optional: "scalar", "table", "notification", etc.
+     oid_string         VARCHAR(255) PRIMARY KEY               -- The numerical OID (e.g., ".1.3.6.1.2.1.1.1.0")
+    ,object_name        VARCHAR(255)                           -- The human-readable name (e.g., "sysDescr")
+    ,data_type          VARCHAR(50)                            -- The data type (e.g., "DisplayString", "Integer32")
+    ,info               VARCHAR(2000)                          -- The textual description from the MIB
+    ,oid_type           VARCHAR(255)                           -- "scalar", "table", "notification", etc.
+    ,mib_module         VARCHAR(50)                            -- Source file / Module Name
 );
 
 -- create snmp_device_info table
@@ -43,34 +43,34 @@ CREATE TABLE IF NOT EXISTS public.snmp_device_info (
 -- INSERT statement for public.snmp_oid_metadata
 INSERT INTO public.snmp_oid_metadata (
      oid_string
-    ,oid_name
-    ,oid_description
-    ,syntax_type
-    ,unit
+    ,object_name
+    ,info
+    ,data_type
     ,oid_type
+    ,mib_module
 ) VALUES (
-     '.1.3.6.1.2.1.1.1.0'                               -- The numerical OID
-    ,'sysDescr'                                         -- Human-readable name
+     '.1.3.6.1.2.1.1.1.0'                              
+    ,'sysDescr'                                       
     ,'A textual description of the entity. This value should include the full name and version identification of the system''s hardware type, software operating-system, and networking software.' -- oid_description: Description from MIB
-    ,'DisplayString'                                    -- Data type
-    ,NULL                                               -- Optional unit (NULL if not applicable)
-    ,'scalar'                                           -- Type of OID (e.g., "scalar", "table")
+    ,'DisplayString'                                
+    ,'scalar'                                           
+    ,'TRUENAS-MIB'                                          
 );
 
 INSERT INTO public.snmp_oid_metadata (
      oid_string
-    ,oid_name
-    ,oid_description
-    ,syntax_type
-    ,unit
+    ,object_name
+    ,info
+    ,data_type
     ,oid_type
+    ,mib_module
 ) VALUES (
      '.1.3.6.1.2.1.2.2.1.10'                            -- ifInOctets (example for a table column)
     ,'ifInOctets'                     
     ,'The total number of octets received on the interface, including framing characters.' 
     ,'Counter32'                     
-    ,'octets'                         
     ,'table'                       
+    ,'TRUENAS-MIB'                                          
 );
 
 

@@ -126,9 +126,11 @@ This will push our **Apache Fluss** data from the **Apache Fluss** cluster (whic
 **Apache Fluss**  
 - [Apache Fluss Home](https://fluss.apache.org/)
 
-- [Apache Fluss Docs](https://alibaba.github.io/fluss-docs/)
+- [What is Fluss / Introduction Page](https://fluss.apache.org/docs/intro/)
 
 - [Apache Fluss GIT](https://github.com/apache/fluss)
+  
+- [Apache Fluss Docs](https://alibaba.github.io/fluss-docs/)
 
 - [Apache Paimon](https://paimon.apache.org)
 

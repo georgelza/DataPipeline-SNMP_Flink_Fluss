@@ -1,3 +1,4 @@
+-- This table will grow large as it will have multiple records for every poll from every snmp agent defined.
 CREATE OR REPLACE TABLE fluss.snmp.snmp_poll_data (
      device_id                  STRING                                  -- Foreign key referencing snmp_device_info.device_id
     ,metric_oid                 STRING                                  -- Object Identifier (OID) of the polled metric

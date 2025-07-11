@@ -1,3 +1,10 @@
+--
+--   NOTE:   at the moment these use standard JDBC Connector, other words when the table is created as per below, it will then one time
+--           fetch the data from the defined source table, any subsequent inserts into the source will not be in the below table
+--
+--           To have records added to the source also appear in the below table the CDC defined configuration is required.
+--
+
 -- MySQL Example using a JDBC Connector
 CREATE TABLE hive.snmp.snmp_device_info_mysql (
      device_id                  VARCHAR(255) PRIMARY KEY NOT ENFORCED           -- Unique identifier for the device
@@ -56,7 +63,8 @@ CREATE TABLE hive.snmp.snmp_device_info_pg (
 -- RCKN => Rack Number
 -- UN => Top U Number of device
 
-
+-- Broken ATM
+-- Selecting from this table... even with data on the source side fails...
 CREATE TABLE hive.snmp.snmp_device_info_redis (
      device_id                  VARCHAR(255) PRIMARY KEY NOT ENFORCED          -- Unique identifier for the device
     ,ip_address                 VARCHAR(45) NOT NULL                           -- IP address of the device (IPv4 or IPv6)

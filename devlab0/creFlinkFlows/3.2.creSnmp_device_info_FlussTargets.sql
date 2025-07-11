@@ -1,3 +1,4 @@
+-- This table will mstly be small, in comparison to the poll_data table.
 CREATE OR REPLACE TABLE fluss.snmp.snmp_device_info (
      device_id                  STRING PRIMARY KEY NOT ENFORCED     -- Unique identifier for the device
     ,ip_address                 STRING NOT NULL                     -- IP address of the device (IPv4 or IPv6)
